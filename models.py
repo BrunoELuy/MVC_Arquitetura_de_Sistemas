@@ -11,6 +11,8 @@ engine = create_engine("sqlite:///database.db", echo=True)
 Base = declarative_base()
 
 # Define a classe que será mapada para uma tabela SQL
+
+
 class Produtos(Base):
     # Define o nome da tabela no banco de dados = produtos
     __tablename__ = "produtos"
@@ -27,6 +29,7 @@ class Produtos(Base):
     # Coluna numérica de ponto flutuante
     preco = Column(Float)
 
+
 # Se caso ainda não existir no banco de dados, cria todas as tabelas conhecidas no Base.metadata
 Base.metadata.create_all(engine)
 
@@ -37,6 +40,8 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Retorna a lista de todos os produtos
+
+
 def listar_produtos():
     # session.query(Produtos) retorna uma consulta SELECT para Produtos
     # .all() executa a consulta e retorna uma lista de objetos Produtos
@@ -45,6 +50,8 @@ def listar_produtos():
     return session.query(Produtos).all()
 
 # Adiciona um novo produto ao banco de dados
+
+
 def adicionar_produto(nome, preco):
     # Cria uma nova instância Python do modelo com base no nome e preço passados
     # Neste momento a instância existe, mas ainda não foi salva no DB (data base)
@@ -55,7 +62,7 @@ def adicionar_produto(nome, preco):
         session.add(novo)
         # Feito o comit e confirma o envio ao banco de dados
         # Basicamente o comando INSERT do SQL
-        session.comit()
+        session.commit()
         return novo
     except Exception:
         # Trativa, se caso não funcionar o commit, é revertido todas as instâncias e alterações
