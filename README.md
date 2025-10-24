@@ -91,7 +91,7 @@ Proporcionar uma base sólida para projetos maiores utilizando frameworks MVC.
 
 ✍️ Autor
 
-Bruno Eudardo Luy
+Bruno Eduardo Luy
 Estudante de Análise e Desenvolvimento de Sistemas – 4° Semestre
 UDESC - Universidade Estadual de Santa Catarina
 📅 Ano: 2025
