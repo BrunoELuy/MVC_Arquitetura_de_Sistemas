@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Produtos</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    h1 { color: #333; }
+    table { border-collapse: collapse; width: 50%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Produtos Cadastrados</h1>
+  <table>
+    <tr><th>ID</th><th>Nome</th><th>Preço (R$)</th></tr>
+    {% for p in produtos %}
+      <tr><td>{{ p.id }}</td><td>{{ p.nome }}</td><td>{{ p.preco }}</td></tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
